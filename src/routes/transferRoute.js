@@ -19,7 +19,7 @@ router.post('/api/sendpoints', authenticateUser, async (req, res) => {
       return res.status(400).json({ message: 'recipient not found' });
     }
 
-    if (sender === recipient) {
+    if (senderUsername === recipientUsername) {
       return res.status(400).json({ message: 'You cannot send points to yourself' });
     }
 
